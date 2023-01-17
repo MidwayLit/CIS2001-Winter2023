@@ -3,12 +3,31 @@ from Triangle import Triangle
 from Rectangle import Rectangle
 from Square import Square
 
+from enum import Enum
+
 
 def print_polygon_perimeter(polygon):
     print(f'{polygon.name} has a perimeter of {polygon.get_perimeter()}')
+    if polygon.type == ShapeType.SQUARE:
+    # if polygon.type == "Square"
+        print('this is a square!')
 
 
-square = Polygon(4, "sqaure")
+class ShapeType(Enum):
+    SQUARE = 1
+    TRIANGLE = 2
+    RECTANGLE = 3
+
+# https://www.geeksforgeeks.org/enum-in-python/
+for shape in (ShapeType):
+    print(shape.value,"-",shape)
+
+
+shape = input("Enter a shape type")
+
+
+
+square = Polygon(4, "sqaure", ShapeType.SQUARE)
 
 for side in range(4):
     square.set_side_length(side, 10)

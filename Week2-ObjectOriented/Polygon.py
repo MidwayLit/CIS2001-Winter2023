@@ -1,9 +1,10 @@
 class Polygon:
 
-    def __init__(self, number_of_sides, name=""):
+    def __init__(self, number_of_sides, name="", type=0):
         self._number_of_sides = number_of_sides
         self._side_lengths = [0] * number_of_sides
         self.name = name
+        self.type = type
 
     def get_number_of_sides(self):
         return self._number_of_sides
